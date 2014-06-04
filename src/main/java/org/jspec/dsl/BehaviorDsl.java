@@ -1,5 +1,7 @@
 package org.jspec.dsl;
 
+import java.util.Arrays;
+import java.util.List;
 
 import org.jspec.block.Block;
 import org.jspec.block.behavior.Before;
@@ -7,29 +9,20 @@ import org.jspec.block.behavior.Context;
 import org.jspec.block.behavior.Describe;
 import org.jspec.block.behavior.It;
 
-import java.util.Arrays;
-import java.util.List;
-
 /**
  * @author  dpersa
  */
 public class BehaviorDsl {
 
-    private static ThreadLocal<Integer> depth = ThreadLocal.withInitial(() -> 0);
-
     public static Block describe(final String description, final Block... blocks) {
         List<Block> blocksList = Arrays.asList(blocks);
-        depth.set(depth.get() + 1);
-        Describe block = new Describe(description, depth.get(), blocksList);
-        depth.set(depth.get() - 1);
+        Describe block = new Describe(description, 1, blocksList);
         return block;
     }
 
     public static Block context(final String description, final Block... blocks) {
         List<Block> blocksList = Arrays.asList(blocks);
-        depth.set(depth.get() + 1);
-        Context block = new Context(description, depth.get(), blocksList);
-        depth.set(depth.get() - 1);
+        Context block = new Context(description, 1, blocksList);
         return block;
     }
 
