@@ -1,6 +1,6 @@
-package org.junit.dsl;
+package org.jspec.dsl;
 
-import org.junit.Test;
+import org.jspec.Test;
 
 import java.util.Stack;
 
@@ -11,7 +11,7 @@ import static org.jspec.dsl.StoryDsl.given;
 import static org.jspec.dsl.StoryDsl.scenario;
 import static org.jspec.dsl.StoryDsl.then;
 import static org.jspec.dsl.StoryDsl.when;
-import static org.junit.Assert.assertThat;
+import static org.jspec.Assert.assertThat;
 
 /**
  * @author dpersa
