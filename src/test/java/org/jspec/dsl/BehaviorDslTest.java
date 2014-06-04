@@ -1,6 +1,6 @@
 package org.jspec.dsl;
 
-import org.jspec.Test;
+import org.junit.Test;
 
 import java.util.Stack;
 
@@ -9,7 +9,7 @@ import static org.jspec.dsl.BehaviorDsl.before;
 import static org.jspec.dsl.BehaviorDsl.context;
 import static org.jspec.dsl.BehaviorDsl.describe;
 import static org.jspec.dsl.BehaviorDsl.it;
-import static org.jspec.Assert.assertThat;
+import static org.junit.Assert.assertThat;
 
 /**
  * @author dpersa
